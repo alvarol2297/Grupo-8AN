@@ -40,7 +40,7 @@ public abstract class PaintOrder {
      * @return un String que representa el tipo de orden. Ejemplo  {@code "sedan"}.
      */
     public abstract String getType();
-
+    
     /**
      * Retorna el precio dependiendo el tipo de orden. Este método debería
      * de devolver un String {@code "?"} cuando la orden no está finalizada, de lo
