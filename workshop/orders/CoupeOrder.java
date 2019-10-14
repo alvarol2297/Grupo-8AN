@@ -13,13 +13,13 @@ import java.util.Random;
 public abstract class MicrobusOrder extends PaintOrder {
 
     //Constructor que recibe de parametros los parametros del constructor de la clase padre
-    public MicrobusOrder (int number, String plate, int total, double time) {
+    public CoupeOrder (int number, String plate, int total, double time) {
         super (number, plate, total, time);
     }
     
 
     //Declaracion de variables
-    int precioMicro = 1000;
+    int precioCoupe = 500;
     Random ran = new Random ();
     int d1 = ran.nextInt (10);
     int d2 = ran.nextInt (10);
@@ -28,7 +28,7 @@ public abstract class MicrobusOrder extends PaintOrder {
 
     //Metodo que devuelve el numero de placa del vehículo en modo aleatorio
     //en formato DDDLLL
-    public void getPlateMicro () {
+    public void getPlateCoupe () {
         System.out.println ("Numero de Matricula: " + d1 + d2 + d3 + (char)(ran.nextInt(90-65+1)+65) + (char)(ran.nextInt(90-65+1)+65) + (char)(ran.nextInt(90-65+1)+65));
     }
 
@@ -39,7 +39,7 @@ public abstract class MicrobusOrder extends PaintOrder {
 
     //Metodo que devuelve el tipo de vehículo
     public String getType () {
-        String s = "MICROBUS";
+        String s = "COUPE";
         return s;
     }
 
@@ -48,7 +48,7 @@ public abstract class MicrobusOrder extends PaintOrder {
     int precioTotal;
     public void getPrice (State DONE) {
         if (state == DONE) {
-            precioTotal = ((total * precioMicro) - ((total * precioMicro)* d3) /100);
+            precioTotal = ((total * precioCoupe) - ((total * precioCoupe)* ran.nextInt(9-4+1)+4)/100));
         } else {
             System.out.println ("?");
         }               
